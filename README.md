@@ -4,26 +4,31 @@
 **Đề tài:** Từ điển tin học (Hash Table + Linked List)  
 **Nhóm:** 2 người
 
-## Cấu trúc thư mục
-
-| Thư mục | Nội dung |
-|---|---|
-| `phan1_phan_tich/` | Phân tích bài toán, yêu cầu chức năng |
-| `phan2_thiet_ke/` | Thiết kế cấu trúc dữ liệu, giải thuật, sơ đồ |
-| `phan3_cai_dat/` | Source code C++ (src/, include/, data/) |
-| `phan4_thu_nghiem/` | Kết quả chạy thử, test case |
-| `phan5_ket_qua/` | Đánh giá kết quả, độ phức tạp |
-| `phan6_phan_cong/` | Bảng phân công nhiệm vụ từng thành viên |
-| `phan7_tai_lieu/` | Tài liệu tham khảo |
-| `phan8_ket_luan/` | Kết luận, hướng phát triển |
-| `bao_cao/` | File báo cáo Word/PDF hoàn chỉnh |
-
 ## Build và chạy
 
 ```bash
 cd phan3_cai_dat
-g++ -std=c++17 -Wall src/*.cpp -o tudien
+make
 ./tudien
+```
+
+## Cấu trúc source code
+
+```
+phan3_cai_dat/
+├── Makefile
+├── include/
+│   ├── Entry.h       // Cấu trúc node (từ + nghĩa + loại từ + con trỏ next)
+│   ├── HashTable.h   // Bảng băm 26 bucket + linked list chaining
+│   ├── FileIO.h      // Đọc/ghi file TXT
+│   └── Menu.h        // Menu tương tác
+├── src/
+│   ├── main.cpp      // TODO: implement
+│   ├── HashTable.cpp // TODO: implement
+│   ├── FileIO.cpp    // TODO: implement
+│   └── Menu.cpp      // TODO: implement
+└── data/
+    └── tudien.txt    // Dữ liệu mẫu (29 từ)
 ```
 
 ## Chức năng yêu cầu
