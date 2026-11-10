@@ -1,0 +1,8 @@
+# Build artifacts
+phan3_cai_dat/src/*.o
+phan3_cai_dat/tudien
+
+# Editor
+.vscode/
+*.swp
+*~

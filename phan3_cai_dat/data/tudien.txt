@@ -1,0 +1,29 @@
+algorithm|thuật toán|noun
+api|giao diện lập trình ứng dụng|noun
+array|mảng|noun
+bit|bit|noun
+boolean|luận lý|adj
+buffer|bộ đệm|noun
+cache|bộ nhớ đệm|noun
+class|lớp|noun
+compiler|trình biên dịch|noun
+cpu|bộ xử lý trung tâm|noun
+database|cơ sở dữ liệu|noun
+debug|gỡ lỗi|verb
+encryption|mã hóa|noun
+framework|khung làm việc|noun
+function|hàm|noun
+graph|đồ thị|noun
+hardware|phần cứng|noun
+integer|số nguyên|noun
+kernel|nhân hệ điều hành|noun
+loop|vòng lặp|noun
+memory|bộ nhớ|noun
+network|mạng|noun
+object|đối tượng|noun
+pointer|con trỏ|noun
+queue|hàng đợi|noun
+recursion|đệ quy|noun
+stack|ngăn xếp|noun
+thread|luồng|noun
+variable|biến|noun
