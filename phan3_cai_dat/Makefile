@@ -1,5 +1,5 @@
 CXX      = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -Wpedantic
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra -Wpedantic
 TARGET   = tudien
 SRCDIR   = src
 INCDIR   = include
@@ -11,15 +11,28 @@ SRCS = $(SRCDIR)/main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
+BENCH_TARGET = benchmark
+BENCH_SRCS   = bench/benchmark.cpp
+BENCH_OBJS   = $(BENCH_SRCS:.cpp=.o)
+
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
+# Benchmark chi can HashTable + FileIO, khong keo theo main/menu
+bench: $(BENCH_TARGET)
+
+$(BENCH_TARGET): $(BENCH_OBJS) $(SRCDIR)/HashTable.o $(SRCDIR)/FileIO.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
 $(SRCDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -I$(INCDIR) -c -o $@ $<
 
-clean:
-	rm -f $(SRCDIR)/*.o $(TARGET)
+bench/%.o: bench/%.cpp
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) -c -o $@ $<
 
-.PHONY: all clean
+clean:
+	rm -f $(SRCDIR)/*.o bench/*.o $(TARGET) $(BENCH_TARGET)
+
+.PHONY: all bench clean

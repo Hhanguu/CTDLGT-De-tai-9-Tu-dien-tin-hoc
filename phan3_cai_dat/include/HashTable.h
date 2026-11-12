@@ -10,6 +10,10 @@ public:
     HashTable();
     ~HashTable();
 
+    // Chặn copy: các bucket là con trỏ sở hữu, copy nông sẽ gây double-free
+    HashTable(const HashTable&) = delete;
+    HashTable& operator=(const HashTable&) = delete;
+
     // Hàm băm: lấy chữ cái đầu của từ, trả về index 0–25
     int hash(const std::string& key) const;
 
