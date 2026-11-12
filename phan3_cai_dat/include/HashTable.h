@@ -52,7 +52,7 @@ private:
     // Xóa toàn bộ một bucket (dùng trong destructor)
     void clearBucket(int index);
 
-    // Tìm node theo khoá, so sánh không phân biệt hoa/thường.
+    // Tìm node theo khoá.
     // prevOut (nếu khác nullptr) nhận node liền trước node tìm thấy.
     Entry* findEntry(const std::string& english, Entry** prevOut = nullptr) const;
 };

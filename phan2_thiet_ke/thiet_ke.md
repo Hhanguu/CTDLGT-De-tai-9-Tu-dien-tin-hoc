@@ -25,7 +25,7 @@ Bảng băm cố định **26 bucket** ứng với 26 chữ cái `a–z`; mỗi 
 | `Entry* buckets_[26]` | Con trỏ đầu danh sách của từng bucket |
 | `int size_` | Tổng số từ hiện có |
 | `clearBucket(int)` | Giải phóng toàn bộ node của một bucket (dùng trong destructor) |
-| `findEntry(key, prevOut)` | Tìm node theo khoá, không phân biệt hoa/thường; trả kèm node liền trước |
+| `findEntry(key, prevOut)` | Tìm node theo khoá; trả kèm node liền trước |
 
 ```cpp
 class HashTable {
@@ -68,25 +68,9 @@ h(key):
 
 Ví dụ: `algorithm` → `0`; `Cache` → `2`; `123abc` → `-1` (từ chối).
 
-## 2.4 So sánh khoá không phân biệt hoa/thường
+## 2.4 Giải thuật các thao tác
 
-Đề bài yêu cầu tra từ không phân biệt hoa/thường, nên toàn bộ thao tác dùng chung bộ so sánh:
-
-```cpp
-// Trả về <0, 0, >0 giống strcmp, mỗi ký tự được tolower trước khi so sánh
-static int compareIgnoreCase(const std::string& a, const std::string& b);
-
-static bool equalsIgnoreCase(const std::string& a, const std::string& b); // == 0
-static bool lessIgnoreCase(const std::string& a, const std::string& b);   // < 0
-```
-
-- `equalsIgnoreCase` dùng để tra từ, kiểm tra trùng, xóa, sửa.
-- `lessIgnoreCase` dùng để chèn đúng thứ tự alphabet trong bucket.
-- Nhờ vậy `search("Cache")`, `remove("CACHE")`, `edit("Apple", ...)` đều tìm đúng `cache`/`apple`, và thứ tự hiển thị vẫn đúng alphabet dù người dùng nhập chữ hoa.
-
-## 2.5 Giải thuật các thao tác
-
-### 2.5.1 Thêm từ — `add`
+### 2.4.1 Thêm từ — `add`
 
 1. `idx = hash(english)`; nếu `idx < 0` → từ chối.
 2. Duyệt bucket `idx`, nếu có node `equalsIgnoreCase(node->english, english)` → từ đã tồn tại, trả `false`.
@@ -123,7 +107,7 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese,
 
 **Độ phức tạp:** O(k) với k là số node trong bucket (trung bình O(n/26), xấu nhất O(n)).
 
-### 2.5.2 Tra từ — `search`
+### 2.4.2 Tra từ — `search`
 
 Dùng chung `findEntry`: băm khoá, duyệt bucket và so sánh `equalsIgnoreCase`.
 
@@ -135,7 +119,7 @@ Entry* HashTable::search(const std::string& english) const {
 
 **Độ phức tạp:** O(k), bộ nhớ O(1).
 
-### 2.5.3 Tìm node (dùng chung) — `findEntry`
+### 2.4.3 Tìm node (dùng chung) — `findEntry`
 
 ```cpp
 Entry* HashTable::findEntry(const std::string& english, Entry** prevOut) const {
@@ -157,7 +141,7 @@ Entry* HashTable::findEntry(const std::string& english, Entry** prevOut) const {
 
 `prevOut` cho phép `remove` biết node liền trước để nối lại danh sách.
 
-### 2.5.4 Xóa từ — `remove`
+### 2.4.4 Xóa từ — `remove`
 
 1. `findEntry(english, &prev)`; không thấy → `false`.
 2. Nếu có node trước: `prev->next = cur->next`; nếu xóa đầu bucket: `buckets_[hash(english)] = cur->next`.
@@ -180,7 +164,7 @@ bool HashTable::remove(const std::string& english) {
 
 **Độ phức tạp:** O(k); giải phóng đúng bộ nhớ, không rò rỉ.
 
-### 2.5.5 Sửa nghĩa/loại từ — `edit`
+### 2.4.5 Sửa nghĩa/loại từ — `edit`
 
 1. Nếu cả `newVi` và `newPos` đều rỗng → không có gì để sửa, trả `false`.
 2. `findEntry(english)`; không thấy → `false`.
@@ -202,7 +186,7 @@ bool HashTable::edit(const std::string& english, const std::string& newVi,
 
 **Độ phức tạp:** O(k).
 
-### 2.5.6 Hiển thị theo nhóm chữ cái — `displayGroup`
+### 2.4.6 Hiển thị theo nhóm chữ cái — `displayGroup`
 
 1. `c = tolower(letter)`; nếu `c` ngoài `a–z` → báo lỗi.
 2. Duyệt `buckets_[c - 'a']` và in từng node theo định dạng `english | vietnamese | pos`.
@@ -210,7 +194,7 @@ bool HashTable::edit(const std::string& english, const std::string& newVi,
 
 **Độ phức tạp:** O(k).
 
-### 2.5.7 Hiển thị tất cả — `displayAll`
+### 2.4.7 Hiển thị tất cả — `displayAll`
 
 1. Nếu `size_ == 0` → in `(trong)`.
 2. Duyệt bucket `0..25`, với mỗi bucket in toàn bộ node.
@@ -230,9 +214,9 @@ void HashTable::displayAll() const {
 }
 ```
 
-**Độ phức tạp:** O(N) — mỗi node được in đúng một lần. Do bucket xếp theo chữ cái đầu và trong bucket đã chèn theo alphabet (không phân biệt hoa/thường), kết quả ra đúng thứ tự alphabet.
+**Độ phức tạp:** O(N) — mỗi node được in đúng một lần. Do bucket xếp theo chữ cái đầu và trong bucket đã chèn theo alphabet, kết quả ra đúng thứ tự alphabet.
 
-## 2.6 Sơ đồ bộ nhớ (dữ liệu mẫu)
+## 2.5 Sơ đồ bộ nhớ (dữ liệu mẫu)
 
 ```
 buckets[0] → [algorithm|thuật toán|noun] → [api|giao diện lập trình ứng dụng|noun]
@@ -247,7 +231,7 @@ buckets[9] → null   (không có từ bắt đầu bằng 'j')
 buckets[25] → null  (không có từ bắt đầu bằng 'z')
 ```
 
-## 2.7 Định dạng file và đọc/ghi dữ liệu
+## 2.6 Định dạng file và đọc/ghi dữ liệu
 
 - File TXT, mỗi dòng một từ: `english|vietnamese|pos`.
 - `saveToFile`: duyệt 26 bucket, ghi lần lượt từng node theo đúng thứ tự trong bảng.

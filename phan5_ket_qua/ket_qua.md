@@ -62,7 +62,7 @@ Do chữ cái đầu phân bố đều nên độ dài chuỗi trung bình xấp
 2. **Tổng thời gian thêm N từ là O(N²/26):** mỗi lần thêm phải duyệt chuỗi dài dần, nên khi N tăng 10 lần thì tổng thời gian tăng hơn 10 lần (1,306 → 89,670 → 22 774,210 ms). Ở mức 100 000 từ còn chịu thêm chi phí cache/memory do danh sách kéo dài.
 3. **Xóa nhanh hơn thêm/tra:** mỗi lần xóa làm chuỗi ngắn lại, nên độ dài trung bình trong suốt quá trình xóa chỉ còn khoảng một nửa so với ban đầu.
 4. **Nút thắt là số bucket:** chỉ 26 bucket nên khi N lớn, mỗi bucket chứa hàng nghìn node. Đây là đánh đổi của thiết kế đề bài (26 bucket cố định), không phải lỗi cài đặt. Nếu mở rộng lên 676 bucket (2 chữ cái đầu), độ dài chuỗi giảm khoảng 26 lần.
-5. **Tính đúng đắn:** đã kiểm tra thủ công các trường hợp thêm mới/trùng (kể cả khác hoa–thường)/khoá không hợp lệ, tra có–không/chữ hoa/chuỗi rỗng, xóa đầu–giữa–cuối, sửa nghĩa/sửa loại từ/không có gì để sửa, hiển thị nhóm/hiển thị tất cả/bảng rỗng, đọc file CRLF và ghi–đọc lại (roundtrip). Tất cả đạt yêu cầu.
+5. **Tính đúng đắn:** đã kiểm tra thủ công các trường hợp thêm mới/trùng/khoá không hợp lệ, tra có–không/chuỗi rỗng, xóa đầu–giữa–cuối, sửa nghĩa/sửa loại từ/không có gì để sửa, hiển thị nhóm/hiển thị tất cả/bảng rỗng, đọc file CRLF và ghi–đọc lại (roundtrip). Tất cả đạt yêu cầu.
 
 ## 5.5 Hạn chế và hướng phát triển
 

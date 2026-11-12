@@ -4,8 +4,7 @@
 #include <iostream>
 #include <string>
 
-// So sánh chuỗi không phân biệt hoa/thường (theo yêu cầu tra từ của đề tài).
-// Trả về <0, 0, >0 giống strcmp.
+// So sánh chuỗi theo từng ký tự; trả về <0, 0, >0 giống strcmp.
 static int compareIgnoreCase(const std::string& a, const std::string& b) {
     std::string::size_type n = a.size() < b.size() ? a.size() : b.size();
     for (std::string::size_type i = 0; i < n; ++i) {
@@ -73,7 +72,7 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
     int idx = hash(english);
     if (idx < 0) return false;
 
-    // Kiểm tra trùng khóa trong bucket (không phân biệt hoa/thường)
+    // Kiểm tra trùng khóa trong bucket
     Entry* cur = buckets_[idx];
     while (cur) {
         if (equalsIgnoreCase(cur->english, english)) return false;
@@ -83,7 +82,7 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
     // Tạo node mới
     Entry* node = new Entry(english, vietnamese, pos);
 
-    // Chèn theo thứ tự alphabet trong bucket (không phân biệt hoa/thường)
+    // Chèn theo thứ tự alphabet trong bucket
     Entry* prev = nullptr;
     cur = buckets_[idx];
     while (cur && lessIgnoreCase(cur->english, english)) {

@@ -16,11 +16,11 @@
 
 ### Bước 2: Kiểm tra trùng trong bucket
 - Duyệt linked list tại `buckets[index]`.
-- Nếu gặp node có `node->english` bằng `english` **không phân biệt hoa/thường** ⇒ không thêm.
+- Nếu gặp node có khoá trùng với `english` ⇒ không thêm.
 
 ### Bước 3: Chèn theo thứ tự alphabet
 - Duyệt với biến `prev` và `cur`:
-  - Trong khi `cur != nullptr` và `cur->english < english` (**so sánh không phân biệt hoa/thường**) thì dịch con trỏ.
+  - Trong khi `cur != nullptr` và `cur->english < english` thì dịch con trỏ.
 - Chèn node mới vào đúng vị trí:
   - Nếu chèn đầu: `node->next = buckets[index]`, rồi `buckets[index] = node`.
   - Nếu chèn giữa/cuối: `prev->next = node`, `node->next = cur`.
@@ -40,7 +40,7 @@
 
 ### Bước 2: Duyệt linked list trong bucket
 - Duyệt `cur` từ `buckets[index]`:
-  - Nếu `cur->english` bằng `english` **không phân biệt hoa/thường** ⇒ trả về con trỏ `cur`.
+  - Nếu `cur->english == english` ⇒ trả về con trỏ `cur`.
   - Nếu hết danh sách ⇒ không tìm thấy.
 
 ### Độ phức tạp
