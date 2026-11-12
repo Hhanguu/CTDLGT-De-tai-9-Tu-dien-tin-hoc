@@ -4,6 +4,17 @@
 #include <iostream>
 #include <string>
 
+// So sánh chuỗi không phân biệt hoa/thường (theo yêu cầu tra từ của đề tài)
+static bool equalsIgnoreCase(const std::string& a, const std::string& b) {
+    if (a.size() != b.size()) return false;
+    for (std::string::size_type i = 0; i < a.size(); ++i) {
+        unsigned char ca = static_cast<unsigned char>(a[i]);
+        unsigned char cb = static_cast<unsigned char>(b[i]);
+        if (std::tolower(ca) != std::tolower(cb)) return false;
+    }
+    return true;
+}
+
 HashTable::HashTable() : size_(0) {
     for (int i = 0; i < BUCKET_COUNT; ++i) buckets_[i] = nullptr;
 }
@@ -27,6 +38,25 @@ int HashTable::hash(const std::string& key) const {
     char c = static_cast<char>(std::tolower(static_cast<unsigned char>(key[0])));
     if (c < 'a' || c > 'z') return -1;
     return c - 'a';
+}
+
+Entry* HashTable::findEntry(const std::string& english, Entry** prevOut) const {
+    if (prevOut) *prevOut = nullptr;
+
+    int idx = hash(english);
+    if (idx < 0) return nullptr;
+
+    Entry* prev = nullptr;
+    Entry* cur = buckets_[idx];
+    while (cur) {
+        if (equalsIgnoreCase(cur->english, english)) {
+            if (prevOut) *prevOut = prev;
+            return cur;
+        }
+        prev = cur;
+        cur = cur->next;
+    }
+    return nullptr;
 }
 
 bool HashTable::add(const std::string& english, const std::string& vietnamese, const std::string& pos) {
@@ -72,28 +102,27 @@ Entry* HashTable::search(const std::string& english) const {
 }
 
 bool HashTable::remove(const std::string& english) {
-    int idx = hash(english);
-    if (idx < 0) return false;
-
     Entry* prev = nullptr;
-    Entry* cur = buckets_[idx];
-    while (cur) {
-        if (cur->english == english) {
-            if (prev) prev->next = cur->next;
-            else buckets_[idx] = cur->next;
-            delete cur;
-            --size_;
-            return true;
-        }
-        prev = cur;
-        cur = cur->next;
+    Entry* cur = findEntry(english, &prev);
+    if (!cur) return false;
+
+    if (prev) {
+        prev->next = cur->next;
+    } else {
+        buckets_[hash(english)] = cur->next;
     }
-    return false;
+
+    delete cur;
+    --size_;
+    return true;
 }
 
 bool HashTable::edit(const std::string& english, const std::string& newVi, const std::string& newPos) {
-    Entry* e = search(english);
+    if (newVi.empty() && newPos.empty()) return false;
+
+    Entry* e = findEntry(english);
     if (!e) return false;
+
     if (!newVi.empty()) e->vietnamese = newVi;
     if (!newPos.empty()) e->pos = newPos;
     return true;
@@ -122,11 +151,15 @@ void HashTable::displayGroup(char letter) const {
 }
 
 void HashTable::displayAll() const {
+    if (size_ == 0) {
+        std::cout << "  (trong)\n";
+        return;
+    }
+
+    // Duyệt bucket 0..25 theo chữ cái đầu, trong mỗi bucket đã sắp alphabet
     for (int i = 0; i < BUCKET_COUNT; ++i) {
-        Entry* cur = buckets_[i];
-        while (cur) {
+        for (Entry* cur = buckets_[i]; cur; cur = cur->next) {
             std::cout << cur->english << " | " << cur->vietnamese << " | " << cur->pos << "\n";
-            cur = cur->next;
         }
     }
 }
