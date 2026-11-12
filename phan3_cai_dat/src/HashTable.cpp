@@ -4,6 +4,26 @@
 #include <iostream>
 #include <string>
 
+// So sánh chuỗi theo từng ký tự; trả về <0, 0, >0 giống strcmp.
+static int compareIgnoreCase(const std::string& a, const std::string& b) {
+    std::string::size_type n = a.size() < b.size() ? a.size() : b.size();
+    for (std::string::size_type i = 0; i < n; ++i) {
+        int ca = std::tolower(static_cast<unsigned char>(a[i]));
+        int cb = std::tolower(static_cast<unsigned char>(b[i]));
+        if (ca != cb) return ca < cb ? -1 : 1;
+    }
+    if (a.size() == b.size()) return 0;
+    return a.size() < b.size() ? -1 : 1;
+}
+
+static bool equalsIgnoreCase(const std::string& a, const std::string& b) {
+    return compareIgnoreCase(a, b) == 0;
+}
+
+static bool lessIgnoreCase(const std::string& a, const std::string& b) {
+    return compareIgnoreCase(a, b) < 0;
+}
+
 HashTable::HashTable() : size_(0) {
     for (int i = 0; i < BUCKET_COUNT; ++i) buckets_[i] = nullptr;
 }
@@ -29,6 +49,25 @@ int HashTable::hash(const std::string& key) const {
     return c - 'a';
 }
 
+Entry* HashTable::findEntry(const std::string& english, Entry** prevOut) const {
+    if (prevOut) *prevOut = nullptr;
+
+    int idx = hash(english);
+    if (idx < 0) return nullptr;
+
+    Entry* prev = nullptr;
+    Entry* cur = buckets_[idx];
+    while (cur) {
+        if (equalsIgnoreCase(cur->english, english)) {
+            if (prevOut) *prevOut = prev;
+            return cur;
+        }
+        prev = cur;
+        cur = cur->next;
+    }
+    return nullptr;
+}
+
 bool HashTable::add(const std::string& english, const std::string& vietnamese, const std::string& pos) {
     int idx = hash(english);
     if (idx < 0) return false;
@@ -36,17 +75,17 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
     // Kiểm tra trùng khóa trong bucket
     Entry* cur = buckets_[idx];
     while (cur) {
-        if (cur->english == english) return false;
+        if (equalsIgnoreCase(cur->english, english)) return false;
         cur = cur->next;
     }
 
     // Tạo node mới
     Entry* node = new Entry(english, vietnamese, pos);
 
-    // Chèn theo thứ tự alphabet trong bucket (tăng dần theo english)
+    // Chèn theo thứ tự alphabet trong bucket
     Entry* prev = nullptr;
     cur = buckets_[idx];
-    while (cur && cur->english < english) {
+    while (cur && lessIgnoreCase(cur->english, english)) {
         prev = cur;
         cur = cur->next;
     }
@@ -60,40 +99,31 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
 }
 
 Entry* HashTable::search(const std::string& english) const {
-    int idx = hash(english);
-    if (idx < 0) return nullptr;
-
-    Entry* cur = buckets_[idx];
-    while (cur) {
-        if (cur->english == english) return cur;
-        cur = cur->next;
-    }
-    return nullptr;
+    return findEntry(english);
 }
 
 bool HashTable::remove(const std::string& english) {
-    int idx = hash(english);
-    if (idx < 0) return false;
-
     Entry* prev = nullptr;
-    Entry* cur = buckets_[idx];
-    while (cur) {
-        if (cur->english == english) {
-            if (prev) prev->next = cur->next;
-            else buckets_[idx] = cur->next;
-            delete cur;
-            --size_;
-            return true;
-        }
-        prev = cur;
-        cur = cur->next;
+    Entry* cur = findEntry(english, &prev);
+    if (!cur) return false;
+
+    if (prev) {
+        prev->next = cur->next;
+    } else {
+        buckets_[hash(english)] = cur->next;
     }
-    return false;
+
+    delete cur;
+    --size_;
+    return true;
 }
 
 bool HashTable::edit(const std::string& english, const std::string& newVi, const std::string& newPos) {
-    Entry* e = search(english);
+    if (newVi.empty() && newPos.empty()) return false;
+
+    Entry* e = findEntry(english);
     if (!e) return false;
+
     if (!newVi.empty()) e->vietnamese = newVi;
     if (!newPos.empty()) e->pos = newPos;
     return true;
@@ -122,11 +152,15 @@ void HashTable::displayGroup(char letter) const {
 }
 
 void HashTable::displayAll() const {
+    if (size_ == 0) {
+        std::cout << "  (trong)\n";
+        return;
+    }
+
+    // Duyệt bucket 0..25 theo chữ cái đầu, trong mỗi bucket đã sắp alphabet
     for (int i = 0; i < BUCKET_COUNT; ++i) {
-        Entry* cur = buckets_[i];
-        while (cur) {
+        for (Entry* cur = buckets_[i]; cur; cur = cur->next) {
             std::cout << cur->english << " | " << cur->vietnamese << " | " << cur->pos << "\n";
-            cur = cur->next;
         }
     }
 }
