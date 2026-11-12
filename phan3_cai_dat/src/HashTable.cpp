@@ -4,15 +4,25 @@
 #include <iostream>
 #include <string>
 
-// So sánh chuỗi không phân biệt hoa/thường (theo yêu cầu tra từ của đề tài)
-static bool equalsIgnoreCase(const std::string& a, const std::string& b) {
-    if (a.size() != b.size()) return false;
-    for (std::string::size_type i = 0; i < a.size(); ++i) {
-        unsigned char ca = static_cast<unsigned char>(a[i]);
-        unsigned char cb = static_cast<unsigned char>(b[i]);
-        if (std::tolower(ca) != std::tolower(cb)) return false;
+// So sánh chuỗi không phân biệt hoa/thường (theo yêu cầu tra từ của đề tài).
+// Trả về <0, 0, >0 giống strcmp.
+static int compareIgnoreCase(const std::string& a, const std::string& b) {
+    std::string::size_type n = a.size() < b.size() ? a.size() : b.size();
+    for (std::string::size_type i = 0; i < n; ++i) {
+        int ca = std::tolower(static_cast<unsigned char>(a[i]));
+        int cb = std::tolower(static_cast<unsigned char>(b[i]));
+        if (ca != cb) return ca < cb ? -1 : 1;
     }
-    return true;
+    if (a.size() == b.size()) return 0;
+    return a.size() < b.size() ? -1 : 1;
+}
+
+static bool equalsIgnoreCase(const std::string& a, const std::string& b) {
+    return compareIgnoreCase(a, b) == 0;
+}
+
+static bool lessIgnoreCase(const std::string& a, const std::string& b) {
+    return compareIgnoreCase(a, b) < 0;
 }
 
 HashTable::HashTable() : size_(0) {
@@ -63,20 +73,20 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
     int idx = hash(english);
     if (idx < 0) return false;
 
-    // Kiểm tra trùng khóa trong bucket
+    // Kiểm tra trùng khóa trong bucket (không phân biệt hoa/thường)
     Entry* cur = buckets_[idx];
     while (cur) {
-        if (cur->english == english) return false;
+        if (equalsIgnoreCase(cur->english, english)) return false;
         cur = cur->next;
     }
 
     // Tạo node mới
     Entry* node = new Entry(english, vietnamese, pos);
 
-    // Chèn theo thứ tự alphabet trong bucket (tăng dần theo english)
+    // Chèn theo thứ tự alphabet trong bucket (không phân biệt hoa/thường)
     Entry* prev = nullptr;
     cur = buckets_[idx];
-    while (cur && cur->english < english) {
+    while (cur && lessIgnoreCase(cur->english, english)) {
         prev = cur;
         cur = cur->next;
     }
@@ -90,15 +100,7 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
 }
 
 Entry* HashTable::search(const std::string& english) const {
-    int idx = hash(english);
-    if (idx < 0) return nullptr;
-
-    Entry* cur = buckets_[idx];
-    while (cur) {
-        if (cur->english == english) return cur;
-        cur = cur->next;
-    }
-    return nullptr;
+    return findEntry(english);
 }
 
 bool HashTable::remove(const std::string& english) {
