@@ -10,6 +10,10 @@ public:
     HashTable();
     ~HashTable();
 
+    // Chặn copy: các bucket là con trỏ sở hữu, copy nông sẽ gây double-free
+    HashTable(const HashTable&) = delete;
+    HashTable& operator=(const HashTable&) = delete;
+
     // Hàm băm: lấy chữ cái đầu của từ, trả về index 0–25
     int hash(const std::string& key) const;
 
@@ -47,6 +51,10 @@ private:
 
     // Xóa toàn bộ một bucket (dùng trong destructor)
     void clearBucket(int index);
+
+    // Tìm node theo khoá.
+    // prevOut (nếu khác nullptr) nhận node liền trước node tìm thấy.
+    Entry* findEntry(const std::string& english, Entry** prevOut = nullptr) const;
 };
 
 #endif // HASHTABLE_H

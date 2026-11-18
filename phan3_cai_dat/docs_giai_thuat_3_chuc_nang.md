@@ -16,7 +16,7 @@
 
 ### Bước 2: Kiểm tra trùng trong bucket
 - Duyệt linked list tại `buckets[index]`.
-- Nếu gặp node có `node->english == english` ⇒ không thêm.
+- Nếu gặp node có khoá trùng với `english` ⇒ không thêm.
 
 ### Bước 3: Chèn theo thứ tự alphabet
 - Duyệt với biến `prev` và `cur`:
