@@ -1,0 +1,976 @@
+# Tu dien tin hoc - 1000 tu test data
+# Format: english|vietnamese|pos
+
+# A
+abstract|truu tuong|adj
+abstraction|su truu tuong hoa|noun
+access|truy cap|verb
+accessor|bo truy cap|noun
+algorithm|thuat toan|noun
+allocate|cap phat|verb
+analysis|phan tich|noun
+anonymous|vo danh|adj
+api|giao dien lap trinh ung dung|noun
+application|ung dung|noun
+architecture|kien truc|noun
+argument|doi so|noun
+array|mang|noun
+assembler|trinh hop ngu|noun
+assembly|hop ngu|noun
+assign|gan|verb
+asynchronous|bat dong bo|adj
+atomic|nguyen tu|adj
+attribute|thuoc tinh|noun
+authentication|xac thuc|noun
+authorization|uy quyen|noun
+
+# B
+backend|he thong backend|noun
+backup|sao luu|noun
+bandwidth|bang thong|noun
+batch|lo|noun
+benchmark|danh gia hieu nang|noun
+binary|nhi phan|adj
+binding|gan ket|noun
+bit|bit|noun
+bitmap|anh bitmap|noun
+bitwise|theo bit|adj
+blockchain|chuoi khoi|noun
+boolean|luan ly|adj
+boot|khoi dong|verb
+bottleneck|nghen co chai|noun
+branch|nhanh|noun
+breakpoint|diem ngat|noun
+broadcast|phat rong|verb
+browser|trinh duyet|noun
+buffer|bo dem|noun
+bug|loi|noun
+build|xay dung|verb
+bus|tuyen|noun
+byte|byte|noun
+bytecode|ma byte|noun
+
+# C
+cache|bo nho dem|noun
+callback|ham goi lai|noun
+casting|ep kieu|noun
+certificate|chung chi|noun
+channel|kenh|noun
+character|ky tu|noun
+checksum|tong kiem tra|noun
+cipher|ma hoa|noun
+class|lop|noun
+client|may khach|noun
+clone|nhan ban|verb
+cloud|dam may|noun
+cluster|cum|noun
+code|ma|noun
+codec|bo ma hoa giai ma|noun
+cohesion|tinh gan ket|noun
+collision|va cham|noun
+command|lenh|noun
+comment|ghi chu|noun
+commit|xac nhan|verb
+compiler|trinh bien dich|noun
+complexity|do phuc tap|noun
+component|thanh phan|noun
+compression|nen|noun
+computation|tinh toan|noun
+concurrency|dong thoi|noun
+condition|dieu kien|noun
+configuration|cau hinh|noun
+connection|ket noi|noun
+console|bang dieu khien|noun
+constant|hang so|noun
+constraint|rang buoc|noun
+constructor|ham khoi tao|noun
+container|container|noun
+content|noi dung|noun
+context|ngu canh|noun
+continuation|tiep dien|noun
+control|dieu khien|noun
+cookie|cookie|noun
+core|nhan|noun
+corruption|hu hong|noun
+coupling|lien ket|noun
+cpu|bo xu ly trung tam|noun
+crash|sup do|verb
+credentials|thong tin xac thuc|noun
+cryptography|mat ma hoc|noun
+cursor|con tro|noun
+cycle|chu ky|noun
+
+# D
+daemon|tien trinh nen|noun
+data|du lieu|noun
+database|co so du lieu|noun
+datatype|kieu du lieu|noun
+deadlock|khoa chet|noun
+debug|go loi|verb
+debugger|trinh go loi|noun
+declaration|khai bao|noun
+decoding|giai ma|noun
+decorator|bo trang tri|noun
+decrement|giam|verb
+decryption|giai ma|noun
+default|mac dinh|adj
+definition|dinh nghia|noun
+delegate|uy quyen|verb
+deletion|xoa|noun
+dependency|phu thuoc|noun
+deployment|trien khai|noun
+deprecated|khong con dung|adj
+dereference|tham chieu|verb
+derived|ke thua|adj
+deserialization|giai don|noun
+design|thiet ke|noun
+destructor|ham huy|noun
+development|phat trien|noun
+device|thiet bi|noun
+diagnostics|chan doan|noun
+dictionary|tu dien|noun
+digest|tom tat|noun
+digital|so|adj
+dimension|chieu|noun
+directory|thu muc|noun
+disable|vo hieu hoa|verb
+disk|dia|noun
+dispatch|dieu phoi|verb
+display|hien thi|verb
+distribution|phan phoi|noun
+documentation|tai lieu|noun
+domain|mien|noun
+download|tai xuong|verb
+driver|trinh dieu khien|noun
+duplicate|nhan ban|verb
+dynamic|dong|adj
+
+# E
+edge|canh|noun
+editor|trinh soan thao|noun
+element|phan tu|noun
+embedded|nhung|adj
+enable|kich hoat|verb
+encapsulation|dong goi|noun
+encoding|ma hoa|noun
+encryption|ma hoa|noun
+endpoint|diem cuoi|noun
+engine|dong co|noun
+entity|thuc the|noun
+entry|muc|noun
+enumeration|liet ke|noun
+environment|moi truong|noun
+error|loi|noun
+escape|thoat|verb
+ethernet|ethernet|noun
+event|su kien|noun
+exception|ngoai le|noun
+executable|tep thuc thi|noun
+execution|thuc thi|noun
+export|xuat|verb
+expression|bieu thuc|noun
+extension|mo rong|noun
+external|ngoai|adj
+
+# F
+factory|nha may|noun
+failure|that bai|noun
+fetch|lay|verb
+field|truong|noun
+file|tep|noun
+filesystem|he thong tep|noun
+filter|bo loc|noun
+finalize|hoan tat|verb
+firewall|tuong lua|noun
+firmware|phan vung|noun
+flag|co|noun
+float|so thuc|noun
+flow|luong|noun
+flush|xoa sach|verb
+folder|thu muc|noun
+font|phong chu|noun
+footer|chan trang|noun
+foreach|vong lap moi phan tu|noun
+foreground|tien canh|noun
+format|dinh dang|noun
+formula|cong thuc|noun
+forward|chuyen tiep|verb
+fragment|manh|noun
+frame|khung|noun
+framework|khung lam viec|noun
+freelist|danh sach trong|noun
+frequency|tan so|noun
+frontend|he thong frontend|noun
+function|ham|noun
+functional|chuc nang|adj
+
+# G
+garbage|rac|noun
+gateway|cong|noun
+generate|sinh|verb
+generator|bo sinh|noun
+generic|tong quat|adj
+getter|ham lay|noun
+gigabyte|gigabyte|noun
+global|toan cuc|adj
+goto|nhay toi|verb
+gpu|bo xu ly do hoa|noun
+gradient|do doc|noun
+grammar|van phap|noun
+graph|do thi|noun
+graphics|do hoa|noun
+grid|luoi|noun
+group|nhom|noun
+guard|bao ve|verb
+
+# H
+hack|xam nhap|verb
+handle|xu ly|verb
+handler|bo xu ly|noun
+handshake|bat tay|noun
+hardware|phan cung|noun
+hash|bam|noun
+hashtable|bang bam|noun
+header|dau|noun
+heap|heap|noun
+hexadecimal|thap luc phan|adj
+hierarchy|phan cap|noun
+highlight|lam noi bat|verb
+hook|mac|noun
+hop|buoc nhay|noun
+host|may chu|noun
+hotfix|sua loi nong|noun
+html|ngon ngu danh dau sieu van ban|noun
+http|giao thuc truyen sieu van ban|noun
+https|giao thuc truyen sieu van ban bao mat|noun
+hub|trung tam|noun
+hyperlink|sieu lien ket|noun
+hypertext|sieu van ban|noun
+
+# I
+identifier|danh dinh|noun
+idle|nghi|adj
+image|hinh anh|noun
+immutable|bat bien|adj
+implementation|cai dat|noun
+import|nhap|verb
+increment|tang|verb
+index|chi so|noun
+indexing|danh chi muc|noun
+indirection|gian tiep|noun
+inference|suy dien|noun
+infinite|vo han|adj
+inheritance|ke thua|noun
+initialization|khoi tao|noun
+inline|trong dong|adj
+input|dau vao|noun
+insert|chen|verb
+installation|cai dat|noun
+instance|the hien|noun
+instantiation|khoi tao the hien|noun
+instruction|chi thi|noun
+integer|so nguyen|noun
+integration|tich hop|noun
+interface|giao dien|noun
+internal|noi bo|adj
+internet|internet|noun
+interpreter|thong dich vien|noun
+interrupt|ngat|noun
+introspection|noi quan|noun
+invalid|khong hop le|adj
+invariant|bat bien|noun
+inversion|dao nguoc|noun
+invocation|goi|noun
+invoke|goi|verb
+iostream|dong vao ra|noun
+isolation|cach ly|noun
+iterate|lap|verb
+iteration|phep lap|noun
+iterator|bo lap|noun
+
+# J
+java|java|noun
+javascript|javascript|noun
+join|noi|verb
+json|dinh dang du lieu json|noun
+jump|nhay|verb
+junction|nut noi|noun
+
+# K
+kernel|nhan he dieu hanh|noun
+key|khoa|noun
+keyboard|ban phim|noun
+keyframe|khung hinh chinh|noun
+keyword|tu khoa|noun
+kilobyte|kilobyte|noun
+
+# L
+label|nhan|noun
+lambda|ham lambda|noun
+language|ngon ngu|noun
+latency|do tre|noun
+layer|lop|noun
+layout|bo cuc|noun
+lazy|tre|adj
+leak|ro ri|noun
+legacy|ke thua|adj
+length|do dai|noun
+lexer|bo phan tich tu vung|noun
+library|thu vien|noun
+license|giay phep|noun
+lifecycle|vong doi|noun
+linker|trinh lien ket|noun
+linux|linux|noun
+list|danh sach|noun
+listener|bo lang nghe|noun
+literal|gia tri truc tiep|noun
+load|tai|verb
+local|cuc bo|adj
+locale|mien dia phuong|noun
+location|vi tri|noun
+lock|khoa|noun
+log|nhat ky|noun
+logging|ghi nhat ky|noun
+logic|logic|noun
+login|dang nhap|verb
+logout|dang xuat|verb
+long|so nguyen dai|noun
+loop|vong lap|noun
+lowercase|chu thuong|noun
+
+# M
+machine|may|noun
+macro|macro|noun
+mailbox|hop thu|noun
+maintainability|tinh bao tri|noun
+malloc|cap phat dong|verb
+malware|phan mem doc hai|noun
+management|quan ly|noun
+manager|bo quan ly|noun
+manifest|bieu tuong|noun
+map|anh xa|verb
+mapping|anh xa|noun
+markdown|markdown|noun
+markup|danh dau|noun
+marshal|dong goi|verb
+mask|mat na|noun
+master|chinh|noun
+match|khop|verb
+matrix|ma tran|noun
+max|toi da|adj
+median|trung vi|noun
+megabyte|megabyte|noun
+member|thanh vien|noun
+memory|bo nho|noun
+merge|tron|verb
+message|thong diep|noun
+metadata|sieu du lieu|noun
+method|phuong thuc|noun
+metric|do luong|noun
+microservice|dich vu nho|noun
+middleware|phan mem trung gian|noun
+migration|di cu|noun
+millisecond|mili giay|noun
+mime|loai phien noi dung|noun
+min|toi thieu|adj
+mirror|phan chieu|noun
+mismatch|khong khop|noun
+mobile|di dong|adj
+mock|gia lap|verb
+model|mo hinh|noun
+modifier|bo sua doi|noun
+modular|mo dun|adj
+module|mo dun|noun
+monitor|giam sat|verb
+monolithic|nguyen khoi|adj
+mouse|chuot|noun
+multicast|da phat|noun
+multimedia|da phien tien|noun
+multiple|nhieu|adj
+multiplexing|da hop|noun
+multithreading|da luong|noun
+mutable|co the thay doi|adj
+mutex|khoa loai tru|noun
+
+# N
+name|ten|noun
+namespace|khong gian ten|noun
+native|nguyen sinh|adj
+navigation|dieu huong|noun
+negative|am|adj
+nested|long nhau|adj
+network|mang|noun
+node|nut|noun
+nonce|so dung mot lan|noun
+normalize|chuan hoa|verb
+notation|ky phap|noun
+notification|thong bao|noun
+null|rong|adj
+nullable|co the rong|adj
+number|so|noun
+numeric|so hoc|adj
+
+# O
+object|doi tuong|noun
+observer|bo quan sat|noun
+octal|bat phan|adj
+offset|do dich|noun
+online|truc tuyen|adj
+opcode|ma tac vu|noun
+open|mo|verb
+operand|toan hang|noun
+operation|phep toan|noun
+operator|toan tu|noun
+optimization|toi uu hoa|noun
+option|tuy chon|noun
+oracle|oracle|noun
+order|thu tu|noun
+origin|goc|noun
+orphan|co nhi|noun
+output|dau ra|noun
+overflow|tran|noun
+overhead|chi phi phu|noun
+overload|nap chong|verb
+override|ghi de|verb
+overwrite|ghi de|verb
+owner|chu so huu|noun
+ownership|quyen so huu|noun
+
+# P
+package|goi|noun
+packet|goi tin|noun
+padding|dem|noun
+page|trang|noun
+pagination|phan trang|noun
+parallel|song song|adj
+parameter|tham so|noun
+parent|cha|noun
+parse|phan tich cu phap|verb
+parser|bo phan tich cu phap|noun
+partition|phan vung|noun
+password|mat khau|noun
+patch|va loi|noun
+path|duong dan|noun
+pattern|mau|noun
+payload|tai trong|noun
+peer|dong dang|noun
+pending|cho xu ly|adj
+performance|hieu nang|noun
+permission|quyen|noun
+persistence|luu tru|noun
+persistent|ben vung|adj
+phase|pha|noun
+physical|vat ly|adj
+pipe|ong dan|noun
+pipeline|duong ong|noun
+pixel|diem anh|noun
+placeholder|phan giu cho|noun
+platform|nen tang|noun
+plugin|bo sung|noun
+pointer|con tro|noun
+polling|tham do|noun
+polymorphism|da hinh|noun
+pool|hop|noun
+popup|cua so bat len|noun
+port|cong|noun
+portable|di dong|adj
+position|vi tri|noun
+positive|duong|adj
+postfix|hau to|noun
+pragma|chi thi tien xu ly|noun
+precedence|thu tu uu tien|noun
+precision|do chinh xac|noun
+predicate|vi tu|noun
+prefix|tien to|noun
+preprocessor|bo tien xu ly|noun
+primary|chinh|adj
+primitive|nguyen thuy|adj
+principle|nguyen tac|noun
+print|in|verb
+priority|uu tien|noun
+private|rieng tu|adj
+privilege|dac quyen|noun
+procedure|thu tuc|noun
+process|tien trinh|noun
+processor|bo xu ly|noun
+producer|nha san xuat|noun
+profile|ho so|noun
+profiler|bo phan tich hieu nang|noun
+program|chuong trinh|noun
+programming|lap trinh|noun
+progress|tien do|noun
+project|du an|noun
+promise|loi hua|noun
+prompt|dau nhac|noun
+property|thuoc tinh|noun
+protected|duoc bao ve|adj
+protocol|giao thuc|noun
+prototype|nguyen mau|noun
+provider|nha cung cap|noun
+proxy|uy quyen|noun
+public|cong khai|adj
+publish|cong bo|verb
+pull|keo|verb
+push|day|verb
+python|python|noun
+
+# Q
+qualifier|bo han dinh|noun
+quality|chat luong|noun
+quantifier|luong tu|noun
+quantum|luong tu|noun
+query|truy van|noun
+queue|hang doi|noun
+quicksort|sap xep nhanh|noun
+quote|dau ngoac kep|noun
+
+# R
+race|dua|noun
+radix|co so|noun
+raise|phat sinh|verb
+random|ngau nhien|adj
+range|khoang|noun
+rank|hang|noun
+raw|tho|adj
+reachable|co the dat toi|adj
+read|doc|verb
+readable|co the doc|adj
+readonly|chi doc|adj
+ready|san sang|adj
+realloc|cap phat lai|verb
+realtime|thoi gian thuc|adj
+rebase|dat lai nen|verb
+reboot|khoi dong lai|verb
+receive|nhan|verb
+record|ban ghi|noun
+recovery|khoi phuc|noun
+rectangle|hinh chu nhat|noun
+recursion|de quy|noun
+recursive|de quy|adj
+redirect|dieu huong lai|verb
+redo|lam lai|verb
+reduce|giam|verb
+redundancy|du thua|noun
+redundant|du thua|adj
+reentrant|tai nhap|adj
+refactor|tai cau truc|verb
+reference|tham chieu|noun
+referential|tham chieu|adj
+reflection|phan chieu|noun
+refresh|lam moi|verb
+regex|bieu thuc chinh quy|noun
+region|vung|noun
+register|thanh ghi|noun
+registration|dang ky|noun
+regression|hoi quy|noun
+regular|chinh quy|adj
+relation|quan he|noun
+relational|quan he|adj
+relative|tuong doi|adj
+release|phat hanh|verb
+reliability|do tin cay|noun
+reload|tai lai|verb
+relocate|di chuyen lai|verb
+remote|tu xa|adj
+remove|xoa|verb
+rename|doi ten|verb
+render|ve|verb
+rendering|ve hoa|noun
+repeat|lap lai|verb
+replace|thay the|verb
+replica|ban sao|noun
+replication|nhan ban|noun
+repository|kho|noun
+represent|dai dien|verb
+request|yeu cau|noun
+require|yeu cau|verb
+requirement|yeu cau|noun
+reserved|du tru|adj
+reset|dat lai|verb
+resize|thay doi kich thuoc|verb
+resolution|do phan giai|noun
+resolve|giai quyet|verb
+resource|tai nguyen|noun
+response|phan hoi|noun
+restart|khoi dong lai|verb
+restore|khoi phuc|verb
+result|ket qua|noun
+resume|tiep tuc|verb
+retain|giu lai|verb
+return|tra ve|verb
+reusable|tai su dung|adj
+reuse|tai su dung|verb
+reverse|dao nguoc|verb
+review|xem xet|verb
+revision|ban sua doi|noun
+revoke|thu hoi|verb
+rollback|hoan tac|verb
+root|goc|noun
+rotate|xoay|verb
+round|lam tron|verb
+route|tuyen|noun
+router|bo dinh tuyen|noun
+routine|thu tuc|noun
+row|hang|noun
+ruby|ruby|noun
+rule|quy tac|noun
+run|chay|verb
+runtime|thoi gian chay|noun
+rust|rust|noun
+
+# S
+safe|an toan|adj
+sample|mau|noun
+sandbox|hop cat|noun
+satellite|ve tinh|noun
+save|luu|verb
+scalar|vo huong|adj
+scale|ty le|verb
+scan|quet|verb
+scanner|bo quet|noun
+scenario|kich ban|noun
+schedule|lap lich|verb
+scheduler|bo lap lich|noun
+schema|lo do|noun
+scope|pham vi|noun
+screen|man hinh|noun
+script|kich ban|noun
+scroll|cuon|verb
+search|tim kiem|verb
+secret|bi mat|noun
+section|muc|noun
+secure|bao mat|adj
+security|bao mat|noun
+seed|hat giong|noun
+seek|tim|verb
+segment|doan|noun
+select|chon|verb
+selection|lua chon|noun
+selector|bo chon|noun
+semantic|ngu nghia|adj
+semaphore|den hieu|noun
+semicolon|dau cham phay|noun
+send|gui|verb
+sender|nguoi gui|noun
+sensitive|nhay cam|adj
+sensor|cam bien|noun
+sentinel|linh canh|noun
+separator|bo phan cach|noun
+sequence|chuoi|noun
+sequential|tuan tu|adj
+serialization|don|noun
+serialize|don|verb
+server|may chu|noun
+service|dich vu|noun
+session|phien|noun
+setter|ham dat|noun
+setting|cai dat|noun
+setup|thiet lap|verb
+shadow|bong|noun
+shallow|nong|adj
+shape|hinh dang|noun
+share|chia se|verb
+shared|duoc chia se|adj
+shell|vo|noun
+shift|dich|verb
+short|ngan|adj
+shortcut|duong tat|noun
+shutdown|tat|verb
+sign|dau|noun
+signal|tin hieu|noun
+signature|chu ky|noun
+signed|co dau|adj
+significant|quan trong|adj
+silent|im lang|adj
+similar|tuong tu|adj
+simple|don gian|adj
+simulate|mo phong|verb
+simulation|mo phong|noun
+single|don|adj
+sink|dich|noun
+site|trang|noun
+size|kich thuoc|noun
+skeleton|khung xuong|noun
+skip|bo qua|verb
+slave|phu thuoc|noun
+sleep|ngu|verb
+slice|lat cat|noun
+slider|thanh truot|noun
+slot|khe|noun
+slow|cham|adj
+snapshot|anh chup|noun
+socket|o cam|noun
+software|phan mem|noun
+solution|giai phap|noun
+solve|giai|verb
+sort|sap xep|verb
+source|nguon|noun
+space|khong gian|noun
+span|khoang|noun
+spawn|sinh ra|verb
+specification|dac ta|noun
+specifier|bo chi dinh|noun
+speed|toc do|noun
+spell|chinh ta|noun
+spin|quay|verb
+split|tach|verb
+spreadsheet|bang tinh|noun
+sql|ngon ngu truy van cau truc|noun
+square|hinh vuong|noun
+stack|ngan xep|noun
+stacktrace|vet ngan xep|noun
+stage|giai doan|noun
+standard|tieu chuan|noun
+start|bat dau|verb
+state|trang thai|noun
+statement|cau lenh|noun
+static|tinh|adj
+statistics|thong ke|noun
+status|trang thai|noun
+step|buoc|noun
+sticky|dinh|adj
+stop|dung|verb
+storage|luu tru|noun
+store|luu tru|verb
+stream|dong|noun
+streaming|truyen phat|noun
+strict|nghiem ngat|adj
+string|chuoi|noun
+strip|cat bo|verb
+struct|cau truc|noun
+structure|cau truc|noun
+stub|so rang|noun
+style|phong cach|noun
+subclass|lop con|noun
+subdirectory|thu muc con|noun
+submit|gui|verb
+subroutine|thu tuc con|noun
+subscribe|dang ky|verb
+subscriber|nguoi dang ky|noun
+subscript|chi so duoi|noun
+subset|tap con|noun
+substring|chuoi con|noun
+subtract|tru|verb
+success|thanh cong|noun
+suffix|hau to|noun
+sum|tong|noun
+super|sieu|adj
+superclass|lop cha|noun
+support|ho tro|verb
+suppress|chan|verb
+surface|be mat|noun
+suspend|treo|verb
+swap|hoan doi|verb
+switch|chuyen|verb
+symbol|ky hieu|noun
+symbolic|ky hieu|adj
+symmetric|doi xung|adj
+sync|dong bo|verb
+synchronization|dong bo hoa|noun
+synchronize|dong bo hoa|verb
+synchronous|dong bo|adj
+syntax|cu phap|noun
+system|he thong|noun
+
+# T
+tab|tab|noun
+table|bang|noun
+tag|nhan|noun
+tail|duoi|noun
+target|dich|noun
+task|nhiem vu|noun
+team|nhom|noun
+template|mau|noun
+temporary|tam thoi|adj
+terminal|dau cuoi|noun
+terminate|ket thuc|verb
+termination|ket thuc|noun
+ternary|ba ngoi|adj
+test|kiem tra|noun
+testing|kiem thu|noun
+text|van ban|noun
+textual|van ban|adj
+theme|chu de|noun
+theory|ly thuyet|noun
+thread|luong|noun
+threshold|nguong|noun
+throw|nem|verb
+thumbnail|anh thu nho|noun
+tick|dau tich|noun
+timeout|het thoi gian|noun
+timer|bo dinh thoi|noun
+timestamp|dau thoi gian|noun
+timezone|mui gio|noun
+title|tieu de|noun
+toggle|chuyen doi|verb
+token|ma bao|noun
+toolkit|bo cong cu|noun
+tooltip|chu giai|noun
+top|dinh|noun
+topic|chu de|noun
+topology|to po|noun
+total|tong|noun
+trace|vet|noun
+track|theo doi|verb
+tracking|theo doi|noun
+traffic|luu luong|noun
+trailer|duoi|noun
+transaction|giao dich|noun
+transfer|chuyen|verb
+transform|bien doi|verb
+transformation|bien doi|noun
+transient|tam thoi|adj
+transition|chuyen|noun
+translate|dich|verb
+translation|phien dich|noun
+translator|bo dich|noun
+transmission|truyen|noun
+transmit|truyen|verb
+transparent|trong suot|adj
+transport|van chuyen|verb
+transpose|chuyen vi|verb
+trap|bay|noun
+traverse|duyet|verb
+tree|cay|noun
+trigger|kich hoat|verb
+trim|cat|verb
+triple|ba|adj
+trivial|tam thuong|adj
+truncate|cat bo|verb
+trust|tin cay|noun
+try|thu|verb
+tuple|bo|noun
+turn|luot|noun
+tutorial|huong dan|noun
+type|kieu|noun
+typedef|dinh nghia kieu|noun
+typename|ten kieu|noun
+
+# U
+ultimate|cuoi cung|adj
+unary|mot ngoi|adj
+unauthorized|khong duoc phep|adj
+unavailable|khong kha dung|adj
+unbox|mo hop|verb
+unbuffered|khong dem|adj
+unchecked|khong kiem tra|adj
+undefined|khong dinh nghia|adj
+underflow|tran am|noun
+underlying|ben duoi|adj
+underscore|gach duoi|noun
+undo|hoan tac|verb
+unicode|unicode|noun
+unified|thong nhat|adj
+uniform|dong nhat|adj
+uninitialized|chua khoi tao|adj
+union|hop|noun
+unique|duy nhat|adj
+unit|don vi|noun
+universal|pho quat|adj
+unix|unix|noun
+unknown|khong biet|adj
+unload|do|verb
+unlock|mo khoa|verb
+unmanaged|khong quan ly|adj
+unmap|bo anh xa|verb
+unmarshal|giai dong goi|verb
+unnamed|khong ten|adj
+unordered|khong thu tu|adj
+unpack|giai nen|verb
+unpredictable|khong du doan|adj
+unregister|huy dang ky|verb
+unreachable|khong the dat toi|adj
+unroll|trien khai|verb
+unsafe|khong an toan|adj
+unsigned|khong dau|adj
+unsubscribe|huy dang ky|verb
+update|cap nhat|verb
+upgrade|nang cap|verb
+upload|tai len|verb
+upper|tren|adj
+uppercase|chu hoa|noun
+uptime|thoi gian hoat dong|noun
+uri|dinh danh tai nguyen thong nhat|noun
+url|dia chi trang|noun
+usable|co the dung|adj
+usage|su dung|noun
+user|nguoi dung|noun
+username|ten nguoi dung|noun
+utility|tien ich|noun
+
+# V
+valid|hop le|adj
+validate|xac thuc|verb
+validation|xac thuc|noun
+validator|bo xac thuc|noun
+value|gia tri|noun
+variable|bien|noun
+variance|phuong sai|noun
+variant|bien the|noun
+variation|bien doi|noun
+vector|vector|noun
+vendor|nha cung cap|noun
+verbose|chi tiet|adj
+verification|xac minh|noun
+verify|xac minh|verb
+version|phien ban|noun
+vertex|dinh|noun
+vertical|doc|adj
+video|video|noun
+view|cai nhin|noun
+viewport|cong nhin|noun
+virtual|ao|adj
+visibility|kha kien|noun
+visible|co the thay|adj
+visit|tham|verb
+visitor|bo tham|noun
+visual|truc quan|adj
+visualization|truc quan hoa|noun
+void|rong|adj
+volatile|de bay hoi|adj
+volume|khoi luong|noun
+vulnerabilities|diem yeu|noun
+vulnerability|diem yeu|noun
+
+# W
+wait|cho|verb
+wake|danh thuc|verb
+walk|di|verb
+warning|canh bao|noun
+watch|giam sat|verb
+watcher|bo giam sat|noun
+watermark|dau cham nuoc|noun
+weak|yeu|adj
+web|mang|noun
+webhook|mac noi|noun
+webpage|trang web|noun
+website|trang web|noun
+weight|trong so|noun
+whitespace|khoang trang|noun
+widget|tien ich nho|noun
+width|chieu rong|noun
+wildcard|ky tu dai dien|noun
+window|cua so|noun
+windows|windows|noun
+wire|day|noun
+wizard|thuat si|noun
+word|tu|noun
+worker|cong nhan|noun
+workflow|luong cong viec|noun
+workspace|khong gian lam viec|noun
+wrap|bao|verb
+wrapper|bo boc|noun
+writable|co the ghi|adj
+write|ghi|verb
+
+# X
+xml|ngon ngu danh dau mo rong|noun
+
+# Y
+yield|tra ve tam|verb
+
+# Z
+zero|khong|noun
+zip|nen|verb
+zone|vung|noun
+zoom|phong to|verb
