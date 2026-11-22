@@ -47,6 +47,9 @@ private:
 
     // Xóa toàn bộ một bucket (dùng trong destructor)
     void clearBucket(int index);
+
+    // Tìm entry trong bucket tương ứng (dùng cho search, remove, edit)
+    Entry* findEntry(const std::string& english) const;
 };
 
 #endif // HASHTABLE_H

@@ -60,6 +60,10 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
 }
 
 Entry* HashTable::search(const std::string& english) const {
+    return findEntry(english);
+}
+
+Entry* HashTable::findEntry(const std::string& english) const {
     int idx = hash(english);
     if (idx < 0) return nullptr;
 

@@ -14,6 +14,7 @@ encryption|mã hóa|noun
 framework|khung làm việc|noun
 function|hàm|noun
 graph|đồ thị|noun
+Hello|Xin Chao|noun
 hardware|phần cứng|noun
 integer|số nguyên|noun
 kernel|nhân hệ điều hành|noun
