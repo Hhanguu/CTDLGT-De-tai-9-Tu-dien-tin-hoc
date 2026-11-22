@@ -52,14 +52,9 @@ private:
     // Xóa toàn bộ một bucket (dùng trong destructor)
     void clearBucket(int index);
 
-<<<<<<< HEAD:9TừĐiểnTinHọc/include/HashTable.h
-    // Tìm entry trong bucket tương ứng (dùng cho search, remove, edit)
-    Entry* findEntry(const std::string& english) const;
-=======
     // Tìm node theo khoá.
     // prevOut (nếu khác nullptr) nhận node liền trước node tìm thấy.
     Entry* findEntry(const std::string& english, Entry** prevOut = nullptr) const;
->>>>>>> 78f82f22b5f879d372934239a94da102e5947d5f:phan3_cai_dat/include/HashTable.h
 };
 
 #endif // HASHTABLE_H

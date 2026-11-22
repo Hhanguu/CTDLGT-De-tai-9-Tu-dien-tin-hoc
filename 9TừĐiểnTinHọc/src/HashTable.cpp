@@ -100,21 +100,6 @@ bool HashTable::add(const std::string& english, const std::string& vietnamese, c
 
 Entry* HashTable::search(const std::string& english) const {
     return findEntry(english);
-<<<<<<< HEAD:9TừĐiểnTinHọc/src/HashTable.cpp
-}
-
-Entry* HashTable::findEntry(const std::string& english) const {
-    int idx = hash(english);
-    if (idx < 0) return nullptr;
-
-    Entry* cur = buckets_[idx];
-    while (cur) {
-        if (cur->english == english) return cur;
-        cur = cur->next;
-    }
-    return nullptr;
-=======
->>>>>>> 78f82f22b5f879d372934239a94da102e5947d5f:phan3_cai_dat/src/HashTable.cpp
 }
 
 bool HashTable::remove(const std::string& english) {

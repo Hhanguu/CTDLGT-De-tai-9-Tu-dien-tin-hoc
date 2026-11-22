@@ -11,17 +11,10 @@ static void printMenu() {
     std::cout << "\n===== TU DIEN TIN HOC (26 bucket + linked list) =====\n"
               << "1. Them tu (add)\n"
               << "2. Tra tu (search)\n"
-<<<<<<< HEAD:9TừĐiểnTinHọc/src/Menu.cpp
               << "3. Sua tu (edit)\n"
               << "4. Xoa tu (remove)\n"
               << "5. Hien thi nhom chu cai (displayGroup)\n"
               << "6. Hien thi toan bo tu dien (displayAll)\n"
-=======
-              << "3. Hien thi nhom chu cai (displayGroup)\n"
-              << "4. Hien thi tat ca (displayAll)\n"
-              << "5. Xoa tu (remove)\n"
-              << "6. Sua nghia/loai tu (edit)\n"
->>>>>>> 78f82f22b5f879d372934239a94da102e5947d5f:phan3_cai_dat/src/Menu.cpp
               << "0. Thoat\n"
               << "Chon: ";
 }
@@ -105,45 +98,11 @@ void runMenu(HashTable& ht, const std::string& dataFile) {
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             ht.displayGroup(letter);
 
-<<<<<<< HEAD:9TừĐiểnTinHọc/src/Menu.cpp
         } else if (choice == 6) {
             // --- Hiển thị toàn bộ ---
             std::cout << "Toan bo tu dien (" << ht.getSize() << " tu):\n";
             ht.displayAll();
 
-=======
-        } else if (choice == 4) {
-            std::cout << "\n===== TAT CA TU =====\n";
-            ht.displayAll();
-
-        } else if (choice == 5) {
-            std::string en;
-            std::cout << "Nhap tu can xoa: ";
-            std::getline(std::cin, en);
-            if (ht.remove(en)) {
-                std::cout << "Da xoa: " << en << "\n";
-                saveToFile(ht, dataFile);
-            } else {
-                std::cout << "Khong tim thay tu de xoa: " << en << "\n";
-            }
-
-        } else if (choice == 6) {
-            std::string en, newVi, newPos;
-            std::cout << "Nhap tu can sua: ";
-            std::getline(std::cin, en);
-            std::cout << "Nghia moi (de trong de giu nguyen): ";
-            std::getline(std::cin, newVi);
-            std::cout << "Loai tu moi (de trong de giu nguyen): ";
-            std::getline(std::cin, newPos);
-
-            if (ht.edit(en, newVi, newPos)) {
-                std::cout << "Da cap nhat: " << en << "\n";
-                saveToFile(ht, dataFile);
-            } else {
-                std::cout << "Khong the sua (tu khong ton tai hoac khong co gi de sua).\n";
-            }
-
->>>>>>> 78f82f22b5f879d372934239a94da102e5947d5f:phan3_cai_dat/src/Menu.cpp
         } else if (choice == 0) {
             std::cout << "Tam biet!\n";
         } else {
