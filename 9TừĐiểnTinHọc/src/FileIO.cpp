@@ -4,12 +4,30 @@
 #include <sstream>
 #include <string>
 
+// Cắt khoảng trắng và ký tự xuống dòng (CR/LF) ở hai đầu chuỗi.
+// Cần thiết vì file dữ liệu trên Windows dùng CRLF: getline chỉ bỏ '\n',
+// nên trường cuối (pos) sẽ còn dính '\r' nếu không trim.
+static std::string trim(const std::string& s) {
+    const char* ws = " \t\r\n";
+    std::string::size_type first = s.find_first_not_of(ws);
+    if (first == std::string::npos) return "";
+    std::string::size_type last = s.find_last_not_of(ws);
+    return s.substr(first, last - first + 1);
+}
+
 static bool parseLine(const std::string& line, std::string& en, std::string& vi, std::string& pos) {
-    if (line.empty() || line[0] == '#') return false;
-    std::istringstream ss(line);
-    return std::getline(ss, en, '|') &&
-           std::getline(ss, vi, '|') &&
-           std::getline(ss, pos);
+    std::string trimmed = trim(line);
+    if (trimmed.empty() || trimmed[0] == '#') return false;
+
+    std::istringstream ss(trimmed);
+    if (!std::getline(ss, en, '|')) return false;
+    if (!std::getline(ss, vi, '|')) return false;
+    if (!std::getline(ss, pos)) pos.clear();
+
+    en = trim(en);
+    vi = trim(vi);
+    pos = trim(pos);
+    return !en.empty();
 }
 
 bool saveToFile(const HashTable& ht, const std::string& filename) {

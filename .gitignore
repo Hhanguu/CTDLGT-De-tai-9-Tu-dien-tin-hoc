@@ -1,6 +1,10 @@
 # Build artifacts
 phan3_cai_dat/src/*.o
+phan3_cai_dat/bench/*.o
 phan3_cai_dat/tudien
+phan3_cai_dat/tudien.exe
+phan3_cai_dat/benchmark
+phan3_cai_dat/benchmark.exe
 
 # Editor
 .vscode/
